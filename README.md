@@ -1,6 +1,8 @@
 Installation
 ------------
 
+Recommend using virtualenvwrapper: http://virtualenvwrapper.readthedocs.org/en/latest/
+
     $ git clone git@github.com:Ogreman/meetup-member-checker.git
     $ cd meetup-member-checker
     $ pip install .
