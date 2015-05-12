@@ -23,3 +23,16 @@ Usage
     werewolf: 266 received members.
     werewolf: No change.
 
+Environment Variables & Virtual Environments
+--------------------------------------------
+
+With virtualenvwrapper installed, it is recommended to add the following to the activation hooks:
+
+    $ mkvirtualenv meetup-member-checker
+    $ cd $VIRTUAL_ENV/bin
+    $ echo export API_KEY="MY_MEETUP_API_KEY" >> postactivate
+    $ echo unset API_KEY >> postdeactivate
+    $ deactivate
+    $ workon meetup-member-checker
+    $ echo $API_KEY
+    MY_MEETUP_API_KEY
