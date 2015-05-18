@@ -6,7 +6,7 @@ import click
 import os
 requests.packages.urllib3.disable_warnings()
 
-API_KEY = os.environ.get('API_KEY', None)
+API_KEY = os.environ.get('MEETUP_API_KEY', None)
 URL = "https://api.meetup.com/2/members?offset=0&sign=True&format=json&group_urlname={url}&order=joined&key={key}"
 
 
