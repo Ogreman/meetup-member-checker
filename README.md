@@ -6,7 +6,7 @@ Recommend using virtualenvwrapper: http://virtualenvwrapper.readthedocs.org/en/l
     $ git clone git@github.com:Ogreman/meetup-member-checker.git
     $ cd meetup-member-checker
     $ pip install .
-    $ export API_KEY="MY_MEETUP_API_KEY"
+    $ export MEETUP_API_KEY="MY_MEETUP_API_KEY"
 
 See here for retrieval of your Meetup API key: https://secure.meetup.com/meetup_api/key/
 
@@ -30,9 +30,9 @@ With virtualenvwrapper installed, it is recommended to add the following to the 
 
     $ mkvirtualenv meetup-member-checker
     $ cd $VIRTUAL_ENV/bin
-    $ echo export API_KEY="MY_MEETUP_API_KEY" >> postactivate
-    $ echo unset API_KEY >> postdeactivate
+    $ echo export MEETUP_API_KEY="MY_MEETUP_API_KEY" >> postactivate
+    $ echo unset MEETUP_API_KEY >> postdeactivate
     $ deactivate
     $ workon meetup-member-checker
-    $ echo $API_KEY
+    $ echo $MEETUP_API_KEY
     MY_MEETUP_API_KEY
