@@ -196,7 +196,7 @@ class MemberChecker(object):
                 if resp.status_code != 200:
                     raise CheckError('Failed to get data.')
                 json_response = resp.json()
-            except AttributeError as e:
+            except (AttributeError, requests.exceptions.ConnectionError) as e:
                 raise CheckError('Failed to get data.')
             results = results + json_response['results']
             if json_response['meta']['next']:
@@ -211,10 +211,8 @@ class MemberChecker(object):
             leavers = self.members - new_set
         else:
             newbies, leavers = None, None
-            
         self._member_set = new_set
         self._last_results = results
-
         return len(new_set), newbies, leavers
 
     def __len__(self):
